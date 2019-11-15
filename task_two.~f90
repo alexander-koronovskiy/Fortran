@@ -1,0 +1,9 @@
+program use_forall integer, parameter :: M=10
+
+integer a(M)
+
+a=(/2,-2,6,2,-8,1,-1,4,-6,2/)
+
+forall (i=1:M, a(i)<0) a(i)=0 end forall
+
+write(*,"(100(i4)) ") a end

@@ -1,0 +1,20 @@
+program main
+integer, dimension(4) :: a, b, c
+a = [ 1, 2, 3, 4 ]
+b = -1 ; c = -1
+
+! task 3.1
+where ( 3 <= a )
+    b = a * 100
+    c = sum( b )
+    elsewhere (a == 2)
+              a = a**2
+    elsewhere (a == 3)
+              a = a**3
+endwhere
+
+print *, a
+print *, b
+print *, c
+
+end program main
