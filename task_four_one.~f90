@@ -1,0 +1,45 @@
+program selectCaseProg
+implicit none
+   ! local variable declaration
+   integer :: marks = 78
+   ! local variable declaration
+   integer :: a = 110
+
+   if((marks > 90).and.(marks < 101)) then
+      print*, "Excellent!"
+   else if((marks > 80).and.(marks < 91)) then
+      print*, "Very good!"
+   else if((marks > 70).and.(marks < 81)) then
+      print*, "Well done!"
+   else if((marks > 60).and.(marks < 71)) then
+      print*, "Not bad!"
+   else if((marks > 50).and.(marks < 61)) then
+      print*,  "You passed!"
+   else if((marks > 41).and.(marks < 50)) then
+      print*, "Very good!"
+   else if(marks < 40) then
+      print*, "Better try again!"
+   else
+      print*, "Invalid marks"
+   end if
+   print*, "exact value of a is ", marks
+
+   select case (marks)
+      case (91:100)
+         print*, "Excellent!"
+      case (81:90)
+         print*, "Very good!"
+      case (71:80)
+         print*, "Well done!"
+      case (61:70)
+         print*, "Not bad!"
+      case (41:60)
+         print*, "You passed!"
+      case (:40)
+         print*, "Better try again!"
+      case default
+         print*, "Invalid marks"
+   end select
+   print*, "Your marks is ", marks
+   
+end program selectCaseProg
